@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class HelloWorld
+{
+    static void Main()
+    {
+        int i, j, count, number;
+        string symbol;
+        Console.Write("Enter a diamond sign (choose from *, # or $): ");
+        symbol = Console.ReadLine();
+
+        if (symbol.Contains("*")  symbol.Contains("$"))
+        {
+            Console.Write("\t\nOKEY\n");
+        }
+        else
+        {
+            Console.Write("\n\tTu debil?\n\tTry Again plz:\n");
+        }
+
+        Console.Write("Enter the height of the diamond: ");
+        number = int.Parse(Console.ReadLine());
+        number = number / 2;
+        count = number - 1;
+
+        for (j = 1; j <= number; j++)
+        {
+            for (i = 1; i <= count; i++)
+                Console.Write(" ");
+            count--;
+            for (i = 1; i <= 2 * j - 1; i++)
+                Console.Write(symbol);
+            Console.WriteLine();
+        }
+        count = 1;
+        for (j = 1; j <= number - 1; j++)
+        {
+            for (i = 1; i <= count; i++)
+                Console.Write(" ");
+            count++;
+            for (i = 1; i <= 2 * (number - j) - 1; i++)
+                Console.Write(symbol);
+            Console.WriteLine();
+        }
+        Console.ReadLine();
+    }
+}
